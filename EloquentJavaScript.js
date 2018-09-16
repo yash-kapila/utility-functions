@@ -10,6 +10,8 @@ const arrayToList = arr => createListItems(arr).reduceRight((acc, current) => {
   return current;
 });
 
+// Return the sum of array elements
+const sum = arr => arr.reduce((acc, elem) => acc + elem, 0);
 
 // Reverse an Array without using .reverse() i.e use pure functions
 const reverseArray = arr => arr.reduceRight((acc, elem) => acc.concat(elem), []);
