@@ -55,3 +55,17 @@ const operation = (function anonymous() {
 }());
 
 operation(// arguments if needed);
+
+// Pattern #2
+// Possibility to execute multiple functions only once
+const executeOnce = (function anonymous() {
+  const executed = [];
+  return function callback(func, ...args) {
+    if (executed.indexOf(func) === -1) {
+      func.apply(null, args);
+      executed.push(func);
+    }
+  };
+}());
+
+executeOnce(// function to execute, // arguments if needed);
