@@ -3,7 +3,7 @@
  * List is a nested set of objects with the first object holding a reference to the second and second to third and so on.
  * [10,20] -> { value: 10, rest: { value: 20, rest: null } }
  */
-const createListItems = arr => arr.map((elem) => ({ value: elem, rest: null }));
+const createListItems = arr => arr.map(elem => ({ value: elem, rest: null }));
 
 const arrayToList = arr => createListItems(arr).reduceRight((acc, current) => {
   current.rest = acc;
