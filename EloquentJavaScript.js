@@ -14,10 +14,10 @@ const arrayToList = arr => createListItems(arr).reduceRight((acc, current) => {
 const sum = arr => arr.reduce((acc, elem) => acc + elem, 0);
 
 // Reverse an Array without using .reverse() i.e use pure functions
-const reverseArray = arr => arr.reduceRight((acc, elem) => acc.concat(elem), []);
+const reduceReverseArray = arr => arr.reduceRight((acc, elem) => acc.concat(elem), []);
 
 // Reverse an Array using ES6 spread operator(still immutable)
-const reverseArray = [...arr].reverse();
+const spreadReverseArray = [...arr].reverse();
 
 // Flatten an array i.e [[1,2,3], [4,5], [6]] -> [1,2,3,4,5,6]
 const flattenArray = arr => arr.reduce((acc, elem) => acc.concat(elem));
