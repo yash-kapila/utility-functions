@@ -19,8 +19,17 @@ const reduceReverseArray = arr => arr.reduceRight((acc, elem) => acc.concat(elem
 // Reverse an Array using ES6 spread operator(still immutable)
 const spreadReverseArray = [...arr].reverse();
 
-// Flatten an array i.e [[1,2,3], [4,5], [6]] -> [1,2,3,4,5,6]
+// Flatten a 2D array i.e [[1,2,3], [4,5], [6]] -> [1,2,3,4,5,6]
 const flattenArray = arr => arr.reduce((acc, elem) => acc.concat(elem));
+
+// Flatten a xD array using recursion
+const flattenAll = arr => arr
+  .reduce((resultArr, item) => {
+    if (Array.isArray(item)) {
+      return [...resultArr, ...flattenAll(item)];
+    }
+    return [...resultArr, item];
+  }, []);
 
 // Object.values alternative for finding if an element exists in the object values
 const findValue = (item, obj) => Object.keys(obj).map(el => obj[el]).includes(item);
