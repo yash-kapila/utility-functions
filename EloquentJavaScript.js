@@ -54,6 +54,9 @@ const equality = (lhs, ...rhs) => isNonEmpty(rhs.filter(el => (lhs === el)));
 // Composition
 const compose = (...fns) => fns.reduceRight((f, g) => (...args) => f(g(...args)));
 
+// Pipe
+const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
+
 // Pattern #1
 // Execute an operation only once
 const operation = (function anonymous() {
